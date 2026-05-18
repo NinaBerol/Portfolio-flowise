@@ -641,23 +641,7 @@ button, input, textarea {
   display: none;
 }
 
-.chatbot-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 2px solid rgba(0, 180, 216, 0.1);
-  background: linear-gradient(135deg, rgba(247, 198, 208, 0.8), rgba(0, 180, 216, 0.05));
-}
 
-.chatbot-header h3 {
-  margin: 0;
-  font-size: 1rem;
-  background: linear-gradient(135deg, #D1738B, #00B4D8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
 .close-btn {
   border: none;
@@ -679,19 +663,6 @@ button, input, textarea {
   transform: rotate(90deg);
 }
 
-.chatbot-messages {
-  padding: 1rem 1.25rem;
-  overflow-y: auto;
-  display: grid;
-  gap: 0.8rem;
-}
-
-.message {
-  padding: 0.95rem 1rem;
-  border-radius: 16px;
-  line-height: 1.6;
-  animation: messageSlideIn 0.3s ease-out;
-}
 
 @keyframes messageSlideIn {
   from {
