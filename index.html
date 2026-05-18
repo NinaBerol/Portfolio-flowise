@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>N.M BEROL Portfolio</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+  <!-- Header with navigation links for smooth scrolling -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand">N.M BEROL</a>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero section introduces the student and key message -->
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="container hero-content">
+        <img src="assets/profile.png" alt="Profile picture" class="hero-image" />
+        <p class="eyebrow">Hello, I'm a Nina Mae H. Berol</p>
+        
+        <p class="hero-text">
+          I am a motivated BSIT student passionate about learning and building simple, clean, and user-friendly web applications. 
+          I enjoy working with web technologies such as HTML, CSS, and Python, and I am continuously learning to improve my skills in software development and AI integration. 
+          I am particularly interested in creating interactive and meaningful digital solutions that solve real-world problems.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About section with introduction and personal details -->
+    <section id="about" class="section about-section">
+      <div class="container about-content">
+        <div class="about-intro">
+          <h2>About Me</h2>
+          <p>
+            I am a Bachelor of Science in Information Technology student focused on learning web development and AI integration.
+            I enjoy turning concepts into sleek, user-friendly designs and connecting them with modern APIs.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>Personal Information</h3>
+          <div class="info-item">
+            <span class="info-label">Full Name</span>
+            <p class="info-value">Niña Mae H. Berol</p>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Program</span>
+            <p class="info-value">Bachelor of Science in Information Technology</p>
+          </div>
+          <div class="info-item">
+            <span class="info-label">School</span>
+            <p class="info-value">University of Cebu - Main Campus</p>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Year Level</span>
+            <p class="info-value">4th Year</p>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Location</span>
+            <p class="info-value">Cebu City, Philippines</p>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Email</span>
+            <p class="info-value"><a href="mailto:ninamaeberol@gmail.com">ninamaeberol@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills section lists technical strengths -->
+    <section id="skills" class="section skills-section">
+      <div class="container section-inner">
+        <h2>Skills</h2>
+        <div class="skill-grid">
+          <div class="skill-card">
+            <h3>Web Design</h3>
+            <p>HTML, CSS, JavaScript, responsive layouts.</p>
+          </div>
+          <div class="skill-card">
+            <h3>AI Integration</h3>
+            <p>API-driven chatbots, AI prompt workflows, modern automation.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Development</h3>
+            <p>Version control, clean code, debugging and testing.</p>
+          </div>
+          <div class="skill-card">
+            <h3>UX Focus</h3>
+            <p>User-first layouts, accessible interfaces, polished animations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects section highlights sample work -->
+    <section id="projects" class="section projects-section">
+      <div class="container section-inner">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>AI Portfolio Site</h3>
+            <p>A responsive portfolio with a floating chatbot and dark modern theme.</p>
+          </article>
+          <article class="project-card">
+            <h3>Chatbot Interface</h3>
+            <p>Flowise-ready chatbot button with API connection placeholder logic.</p>
+          </article>
+          <article class="project-card">
+            <h3>Student Dashboard</h3>
+            <p>Data-driven UI concept for tracking tasks, skills, and academic progress.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact section with a simple form and contact details -->
+    <section id="contact" class="section contact-section">
+      <div class="container section-inner">
+        <h2>Contact</h2>
+        <p>Send a message to discuss internship opportunities, freelance work, or AI projects.</p>
+        <form id="contact-form" class="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Write a message..." required></textarea>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating chatbot button pinned to the bottom right -->
+  <button id="chatbot-button" class="chatbot-button" aria-label="Open chatbot">
+    <span>Chat</span>
+  </button>
+
+  <!-- Chat widget modal hidden by default -->
+  <div id="chatbot-panel" class="chatbot-panel hidden">
+    <div class="chatbot-header">
+      <h3>AI Chat</h3>
+      <button id="close-chat" class="close-btn" aria-label="Close chat">×</button>
+    </div>
+    <div id="chat-messages" class="chatbot-messages">
+      <div class="message bot-message">Hi! Ask me anything about AI, web development, or my projects.</div>
+    </div>
+    <form id="chat-form" class="chatbot-form">
+      <input id="chat-input" type="text" placeholder="Type your question..." autocomplete="off" required />
+      <button type="submit" class="btn btn-secondary">Send</button>
+    </form>
+  </div>
+
+  <script src="static/js/script.js"></script>
+</body>
+</html>
