@@ -28,7 +28,8 @@ function addChatMessage(text, isUser = false) {
 
 // Flowise API endpoint
 const FLOWISE_API_ENDPOINT =
-  "https://cloud.flowiseai.com/canvas/4c83d5f7-f945-4215-8753-9ea1a0ab4c5b";
+  "https://cloud.flowiseai.com/api/v1/prediction/4c83d5f7-f945-4215-8753-9ea1a0ab4c5b";
+
 
 // Chat submit handler
 chatForm.addEventListener('submit', async (event) => {
