@@ -30,7 +30,6 @@ function addChatMessage(text, isUser = false) {
 const FLOWISE_API_ENDPOINT =
   "https://cloud.flowiseai.com/api/v1/prediction/4c83d5f7-f945-4215-8753-9ea1a0ab4c5b";
 
-
 // Chat submit handler
 chatForm.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -45,9 +44,19 @@ chatForm.addEventListener('submit', async (event) => {
   // Typing indicator
   const loadingMessage = document.createElement('div');
   loadingMessage.classList.add('message', 'bot-message');
-  loadingMessage.textContent = 'Thinking...';
+  loadingMessage.textContent = '...';
   chatMessages.appendChild(loadingMessage);
   chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  
+  const greetings = ["hi", "hello", "hey"];
+  if (greetings.includes(userText.toLowerCase())) {
+    setTimeout(() => {
+      loadingMessage.remove();
+      addChatMessage("Hello! How can I help you today?");
+    }, 500);
+    return;
+  }
 
   try {
     const response = await fetch(FLOWISE_API_ENDPOINT, {
@@ -57,6 +66,7 @@ chatForm.addEventListener('submit', async (event) => {
       },
       body: JSON.stringify({
         question: userText,
+        chatId: "portfolio-chat" 
       }),
     });
 
@@ -65,7 +75,7 @@ chatForm.addEventListener('submit', async (event) => {
     // Remove loading text
     loadingMessage.remove();
 
-    // Handle different possible Flowise response formats
+    // Handle Flowise response formats safely
     const botReply =
       data?.text ||
       data?.answer ||
@@ -74,6 +84,7 @@ chatForm.addEventListener('submit', async (event) => {
       "Sorry, I couldn't get a valid response from the AI.";
 
     addChatMessage(botReply);
+
   } catch (error) {
     loadingMessage.remove();
     addChatMessage('Network error: could not connect to Flowise API.');
