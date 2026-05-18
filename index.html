@@ -147,26 +147,15 @@
     </section>
   </main>
 
-  <!-- Floating chatbot -->
-  <button id="chatbot-button" class="chatbot-button" aria-label="Open chatbot">
-    <span>Chat</span>
-  </button>
 
-  <!-- Chat widget modal hidden by default -->
-  <div id="chatbot-panel" class="chatbot-panel hidden">
-    <div class="chatbot-header">
-      <h3>Ami Chat</h3>
-      <button id="close-chat" class="close-btn" aria-label="Close chat">×</button>
-    </div>
-    <div id="chat-messages" class="chatbot-messages">
-      <div class="message bot-message">Hi! How can I help you today?</div>
-    </div>
-    <form id="chat-form" class="chatbot-form">
-      <input id="chat-input" type="text" placeholder="Type your question..." autocomplete="off" required />
-      <button type="submit" class="btn btn-secondary">Send</button>
-    </form>
-  </div>
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "4c83d5f7-f945-4215-8753-9ea1a0ab4c5b",
+        apiHost: "https://cloud.flowiseai.com",
+    })
+</script>
 
-  <script src="static/js/script.js"></script>
+  
 </body>
 </html>
